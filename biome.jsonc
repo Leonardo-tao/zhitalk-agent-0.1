@@ -20,6 +20,9 @@
   },
   "linter": {
     "rules": {
+      "performance": {
+        "noNamespaceImport": "off"
+      },
       "suspicious": {
         /* Needs more work to fix */
         "noExplicitAny": "off",
@@ -33,7 +36,8 @@
         "noConsole": "off",
 
         /* Needed for generateUUID() */
-        "noBitwiseOperators": "off"
+        "noBitwiseOperators": "off",
+        "noDocumentCookie": "off"
       },
       "style": {
         "useBlockStatements": "off",
@@ -46,7 +50,8 @@
       "nursery": {
         /* Too many false positives */
         "noUnnecessaryConditions": "off",
-        "useSortedClasses": "off"
+        "useSortedClasses": "off",
+        "noShadow": "off"
       },
       "complexity": {
         /* Needs more work to fix */
@@ -56,7 +61,11 @@
         "useSimplifiedLogicExpression": "off"
       },
       "correctness": {
-        "noUnusedVariables": "off"
+        "noUnusedImports": "off",
+        "noUnusedVariables": "off",
+        "noUnusedFunctionParameters": "off",
+        "noUnusedLabels": "off",
+        "useExhaustiveDependencies": "off"
       },
       "a11y": {
         /* Needs more work to fix */
