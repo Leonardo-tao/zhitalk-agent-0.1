@@ -50,13 +50,21 @@ export async function POST(request: Request) {
     const filename = (formData.get("file") as File).name;
     const fileBuffer = await file.arrayBuffer();
 
+    if (!process.env.BLOB_READ_WRITE_TOKEN) {
+      return NextResponse.json(
+        { error: "Missing BLOB_READ_WRITE_TOKEN" },
+        { status: 500 }
+      );
+    }
+
     try {
       const data = await put(`${filename}`, fileBuffer, {
         access: "public",
       });
 
       return NextResponse.json(data);
-    } catch (_error) {
+    } catch (error) {
+      console.error("Upload failed:", error);
       return NextResponse.json({ error: "Upload failed" }, { status: 500 });
     }
   } catch (_error) {
