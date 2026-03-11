@@ -55,4 +55,5 @@ export type Attachment = {
   name: string;
   url: string;
   contentType: string;
+  base64?: string;
 };
