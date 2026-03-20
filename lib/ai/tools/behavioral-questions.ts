@@ -1,7 +1,8 @@
 import { tool } from "ai";
 import { z } from "zod";
 
-const BEHAVIORAL_QUESTIONS_URL = "https://raw.githubusercontent.com/mianshipai/mianshipai-web/refs/heads/main/docs/hr-exam/behavioral-test.md";
+const BEHAVIORAL_QUESTIONS_URL =
+  "https://raw.githubusercontent.com/mianshipai/mianshipai-web/refs/heads/main/docs/hr-exam/behavioral-test.md";
 
 async function fetchBehavioralQuestions(): Promise<string> {
   try {

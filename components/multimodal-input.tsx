@@ -46,7 +46,7 @@ import { SuggestedActions } from "./suggested-actions";
 import { Button } from "./ui/button";
 import type { VisibilityType } from "./visibility-selector";
 
-function readFileAsBase64(inputFile: File){
+function readFileAsBase64(inputFile: File) {
   return new Promise<string>((resolve, reject) => {
     const reader = new FileReader();
     reader.onload = () => {
@@ -236,7 +236,7 @@ function PureMultimodalInput({
           contentType: file.type,
           url: "",
           base64,
-        }
+        },
       ]);
 
       // setUploadQueue(files.map((file) => file.name));
