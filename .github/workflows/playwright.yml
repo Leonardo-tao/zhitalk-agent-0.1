@@ -72,11 +72,8 @@ jobs:
         if: steps.playwright-cache.outputs.cache-hit != 'true'
         run: pnpm exec playwright install --with-deps chromium
 
-      - name: Run a single test
-        run: pnpm test -- --grep "Create a text artifact"
-
       - name: Run Playwright tests
-        run: pnpm test
+        run: pnpm test --workers=1
 
       - uses: actions/upload-artifact@v4
         if: always() && !cancelled()
