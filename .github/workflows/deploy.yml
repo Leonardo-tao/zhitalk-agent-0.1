@@ -40,8 +40,7 @@ jobs:
           mkdir -p deploy
           # 复制 standalone
           cp -r .next/standalone/* deploy/
-          # static 文件夹和 BUILD_ID 单独复制
-          mkdir -p deploy/.next
+          # 复制完整 .next 文件夹
           cp -r .next deploy/.next
           # public
           [ -d public ] && cp -r public deploy/public
