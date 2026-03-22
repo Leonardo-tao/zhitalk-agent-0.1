@@ -1,0 +1,288 @@
+/**
+ * Homepage specific styles
+ * Structure follows globals.css conventions
+ */
+
+/* Homepage design tokens - Dark tech theme */
+:root {
+  /* Homepage specific color overrides */
+  --homepage-background: hsl(220 20% 6%);
+  --homepage-foreground: hsl(0 0% 98%);
+  --homepage-card: hsl(220 18% 10%);
+  --homepage-card-foreground: hsl(0 0% 98%);
+  --homepage-primary: hsl(172 66% 50%);
+  --homepage-primary-foreground: hsl(220 20% 6%);
+  --homepage-secondary: hsl(220 15% 15%);
+  --homepage-secondary-foreground: hsl(0 0% 98%);
+  --homepage-muted: hsl(220 15% 15%);
+  --homepage-muted-foreground: hsl(220 10% 55%);
+  --homepage-accent: hsl(172 66% 50%);
+  --homepage-accent-foreground: hsl(220 20% 6%);
+  --homepage-border: hsl(220 15% 18%);
+  --homepage-ring: hsl(172 66% 50%);
+
+  /* Gradient colors */
+  --homepage-gradient-start: hsl(172 66% 50%);
+  --homepage-gradient-end: hsl(200 80% 55%);
+
+  /* Glow effect */
+  --homepage-glow: hsl(172 66% 50% / 0.15);
+  --homepage-glow-strong: hsl(172 66% 50% / 0.3);
+}
+
+/* Homepage wrapper - applies dark tech theme */
+.homepage-wrapper,
+.homepage-wrapper * {
+  --color-background: var(--homepage-background) !important;
+  --color-foreground: var(--homepage-foreground) !important;
+  --color-card: var(--homepage-card) !important;
+  --color-card-foreground: var(--homepage-card-foreground) !important;
+  --color-primary: var(--homepage-primary) !important;
+  --color-primary-foreground: var(--homepage-primary-foreground) !important;
+  --color-secondary: var(--homepage-secondary) !important;
+  --color-secondary-foreground: var(--homepage-secondary-foreground) !important;
+  --color-muted: var(--homepage-muted) !important;
+  --color-muted-foreground: var(--homepage-muted-foreground) !important;
+  --color-accent: var(--homepage-accent) !important;
+  --color-accent-foreground: var(--homepage-accent-foreground) !important;
+  --color-border: var(--homepage-border) !important;
+  --color-ring: var(--homepage-ring) !important;
+
+  --background: var(--homepage-background) !important;
+  --foreground: var(--homepage-foreground) !important;
+  --card: var(--homepage-card) !important;
+  --card-foreground: var(--homepage-card-foreground) !important;
+  --primary: var(--homepage-primary) !important;
+  --primary-foreground: var(--homepage-primary-foreground) !important;
+  --secondary: var(--homepage-secondary) !important;
+  --secondary-foreground: var(--homepage-secondary-foreground) !important;
+  --muted: var(--homepage-muted) !important;
+  --muted-foreground: var(--homepage-muted-foreground) !important;
+  --accent: var(--homepage-accent) !important;
+  --accent-foreground: var(--homepage-accent-foreground) !important;
+  --border: var(--homepage-border) !important;
+  --ring: var(--homepage-ring) !important;
+}
+
+.homepage-wrapper {
+  background-color: var(--homepage-background) !important;
+  color: var(--homepage-foreground) !important;
+}
+
+/* Homepage utility classes */
+@layer utilities {
+  /* Grid background pattern */
+  .homepage-grid-bg {
+    background-image:
+      linear-gradient(to right, var(--homepage-border) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--homepage-border) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  /* Radial gradient overlay */
+  .homepage-radial-gradient {
+    background: radial-gradient(
+      ellipse 80% 50% at 50% -20%,
+      var(--homepage-glow),
+      transparent
+    );
+  }
+
+  /* Primary gradient text */
+  .homepage-gradient-text {
+    background: linear-gradient(
+      135deg,
+      var(--homepage-gradient-start),
+      var(--homepage-gradient-end)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glow effect for cards */
+  .homepage-card-glow {
+    position: relative;
+  }
+
+  .homepage-card-glow::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: linear-gradient(
+      135deg,
+      var(--homepage-glow-strong),
+      transparent 50%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
+
+  .homepage-card-glow:hover::before {
+    opacity: 1;
+  }
+
+  /* Primary button glow */
+  .homepage-btn-glow {
+    box-shadow: 0 0 20px var(--homepage-glow);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .homepage-btn-glow:hover {
+    box-shadow: 0 0 30px var(--homepage-glow-strong);
+  }
+
+  /* Feature icon container */
+  .homepage-icon-container {
+    background: linear-gradient(
+      135deg,
+      var(--homepage-secondary),
+      var(--homepage-card)
+    );
+    border: 1px solid var(--homepage-border);
+  }
+
+  /* Demo preview container */
+  .homepage-demo-container {
+    background: var(--homepage-card);
+    border: 1px solid var(--homepage-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  /* Active state indicator */
+  .homepage-active-indicator {
+    background: var(--homepage-primary);
+    box-shadow: 0 0 10px var(--homepage-glow-strong);
+  }
+
+  /* Tech tag styling */
+  .homepage-tech-tag {
+    background: var(--homepage-secondary);
+    border: 1px solid var(--homepage-border);
+    color: var(--homepage-muted-foreground);
+    transition: all 0.2s ease;
+  }
+
+  .homepage-tech-tag:hover {
+    border-color: var(--homepage-primary);
+    color: var(--homepage-primary);
+  }
+
+  /* Section divider */
+  .homepage-section-divider {
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--homepage-border),
+      transparent
+    );
+  }
+
+  /* Floating animation */
+  .homepage-float {
+    animation: homepage-float 6s ease-in-out infinite;
+  }
+
+  @keyframes homepage-float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Pulse glow animation */
+  .homepage-pulse-glow {
+    animation: homepage-pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes homepage-pulse-glow {
+    0%,
+    100% {
+      box-shadow: 0 0 20px var(--homepage-glow);
+    }
+    50% {
+      box-shadow: 0 0 40px var(--homepage-glow-strong);
+    }
+  }
+}
+
+/* Homepage component styles */
+@layer components {
+  /* Header navigation */
+  .homepage-header {
+    background: var(--homepage-background) / 0.8;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--homepage-border);
+  }
+
+  /* Hero section */
+  .homepage-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Feature card */
+  .homepage-feature-card {
+    background: var(--homepage-card);
+    border: 1px solid var(--homepage-border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .homepage-feature-card:hover {
+    border-color: var(--homepage-primary);
+    transform: translateY(-2px);
+  }
+
+  /* Demo section tabs */
+  .homepage-demo-tab {
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius);
+    font-weight: 500;
+    transition: all 0.2s ease;
+    color: var(--homepage-muted-foreground);
+  }
+
+  .homepage-demo-tab:hover {
+    color: var(--homepage-foreground);
+  }
+
+  .homepage-demo-tab[data-active="true"] {
+    background: var(--homepage-primary);
+    color: var(--homepage-primary-foreground);
+  }
+
+  /* CTA section */
+  .homepage-cta {
+    background: linear-gradient(
+      to bottom,
+      var(--homepage-card),
+      var(--homepage-background)
+    );
+    border-top: 1px solid var(--homepage-border);
+  }
+
+  /* Footer */
+  .homepage-footer {
+    background: var(--homepage-background);
+    border-top: 1px solid var(--homepage-border);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .homepage-grid-bg {
+    background-size: 40px 40px;
+  }
+}
