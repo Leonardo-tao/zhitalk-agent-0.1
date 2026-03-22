@@ -1,16 +1,24 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { FileText, MessageSquare, BookOpen, Code2 } from "lucide-react";
 
 const features = [
   {
     icon: FileText,
     title: "简历优化",
-    description: "智能分析你的简历，提供针对性优化建议，突出技术亮点，让 HR 眼前一亮",
+    description:
+      "智能分析你的简历，提供针对性优化建议，突出技术亮点，让 HR 眼前一亮",
   },
   {
     icon: MessageSquare,
     title: "模拟面试",
-    description: "真实还原面试场景，覆盖技术面、项目面、HR 面，全方位提升面试表现",
+    description:
+      "真实还原面试场景，覆盖技术面、项目面、HR 面，全方位提升面试表现",
   },
   {
     icon: BookOpen,
@@ -37,11 +45,11 @@ export function FeaturesSection() {
             从简历优化到模拟面试，一站式解决你的面试难题
           </p>
         </div>
-        
+
         {/* Features Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
-            <Card 
+            <Card
               key={feature.title}
               className="homepage-feature-card homepage-card-glow bg-card border-border hover:border-primary/50 transition-all duration-300"
             >
@@ -49,7 +57,9 @@ export function FeaturesSection() {
                 <div className="w-12 h-12 rounded-lg homepage-icon-container flex items-center justify-center mb-4">
                   <feature.icon className="w-6 h-6 text-primary" />
                 </div>
-                <CardTitle className="text-foreground">{feature.title}</CardTitle>
+                <CardTitle className="text-foreground">
+                  {feature.title}
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-muted-foreground leading-relaxed">

@@ -12,13 +12,15 @@ export function Footer() {
             </div>
             <span className="font-semibold text-foreground">ZhiJi</span>
           </div>
-          
-          
+
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} ZhiJi. All rights reserved.
           </p>
           <nav className="flex items-center gap-6 text-sm text-muted-foreground">
-            <Link href="#features" className="hover:text-foreground transition-colors">
+            <Link
+              href="#features"
+              className="hover:text-foreground transition-colors"
+            >
               功能介绍
             </Link>
             <Link href="#" className="hover:text-foreground transition-colors">
