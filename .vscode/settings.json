@@ -64,7 +64,7 @@
   "explorer.fileNesting.enabled": true,
 	"explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "next.config.*": "*.env, .env.*, proxy.ts, tsconfig.json, jsconfig.json, .eslintrc*, .prettierrc*, .babelrc*, biome.jsonc, drizzle.config.ts, playwright.config.ts, postcss.config.mjs",
+    "next.config.*": "*.env, .env.*, .eslintrc*, .prettierrc*, .babelrc*, drizzle.config.ts, playwright.config.ts, postcss.config.mjs, components.json, instrumentation.ts, next-env.d.ts, vercel-template.json",
     "*.ts": "${capture}.js, ${capture}.d.ts, ${capture}.map, ${capture}.test.ts, ${capture}.spec.ts",
     "*.tsx": "${capture}.module.css, ${capture}.module.scss, ${capture}.module.sass, ${capture}.test.tsx, ${capture}.spec.tsx",
     "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
@@ -73,8 +73,8 @@
     "layout.tsx": "layout.module.css, layout.module.scss",
     "loading.tsx": "loading.module.css",
     "error.tsx": "error.module.css",
-    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, .npmrc",
-    "README.md": "readme.md, README*, CHANGELOG*, LICENSE*"
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, .npmrc, .gitignore",
+    "README.md": "readme.md, README_*.md, CHANGELOG*, LICENSE*"
   },
   "files.exclude": {
     "**/.git": true,

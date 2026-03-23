@@ -3,7 +3,7 @@
 [![GitHub Repo](https://img.shields.io/badge/GitHub-ZhiJi-blue.svg?logo=github)](https://github.com/Leonardo-tao/ZhiJi)
 [![Website](https://img.shields.io/badge/Website-zhiji.codercat.top-green.svg)](https://zhiji.codercat.top)
 
-*其他语言版本: 简体中文, [English](README.md).*
+*其他语言版本: 简体中文, [English](README_en.md).*
 
 ZhiJi（知己）是一个功能强大的开源 AI 聊天机器人项目，基于 Next.js App Router 和 Vercel AI SDK 构建。它不仅提供多模型支持的统一聊天界面，还具备强大的 Artifacts（工件）生成能力，是您在模拟面试和简历优化等方面的智能助手！
 
