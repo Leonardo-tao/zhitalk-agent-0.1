@@ -335,10 +335,10 @@ function PureMultimodalInput({
         className="rounded-xl border border-border bg-background p-3 shadow-xs transition-all duration-200 focus-within:border-border hover:border-muted-foreground/50"
         onSubmit={(event) => {
           event.preventDefault();
-          if (status !== "ready") {
-            toast.error("Please wait for the model to finish its response!");
-          } else {
+          if (status === "ready") {
             submitForm();
+          } else {
+            toast.error("Please wait for the model to finish its response!");
           }
         }}
       >
@@ -514,7 +514,7 @@ function PureModelSelectorCompact({
           <ChevronDownIcon size={16} />
         </Button>
       </Trigger>
-      <PromptInputModelSelectContent className="min-w-[260px] p-0">
+      <PromptInputModelSelectContent className="min-w-65 p-0">
         <div className="flex flex-col gap-px">
           {chatModels.map((model) => (
             <SelectItem key={model.id} value={model.name}>

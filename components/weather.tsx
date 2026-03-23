@@ -335,8 +335,7 @@ export function Weather({
           "bg-linear-to-br from-sky-400 via-blue-500 to-blue-600": isDay,
         },
         {
-          "bg-linear-to-br from-indigo-900 via-purple-900 to-slate-900":
-            !isDay,
+          "bg-linear-to-br from-indigo-900 via-purple-900 to-slate-900": !isDay,
         }
       )}
     >

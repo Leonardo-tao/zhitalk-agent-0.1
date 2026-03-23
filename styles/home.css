@@ -38,8 +38,8 @@
 
 /* Ensure root and body match homepage background when active to fix white scrollbar track */
 :root:has(.homepage-wrapper) {
-  background-color: var(--homepage-background) !important;
   color-scheme: dark !important;
+  background-color: var(--homepage-background) !important;
 }
 
 :root:has(.homepage-wrapper) body {
@@ -81,8 +81,8 @@
 }
 
 .homepage-wrapper {
-  background-color: var(--homepage-background) !important;
   color: var(--homepage-foreground) !important;
+  background-color: var(--homepage-background) !important;
 }
 
 /* Homepage utility classes */
@@ -106,13 +106,13 @@
 
   /* Primary gradient text */
   .homepage-gradient-text {
+    -webkit-text-fill-color: transparent;
     background: linear-gradient(
       135deg,
       var(--homepage-gradient-start),
       var(--homepage-gradient-end)
     );
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
@@ -122,18 +122,18 @@
   }
 
   .homepage-card-glow::before {
-    content: "";
     position: absolute;
     inset: -1px;
-    border-radius: inherit;
+    z-index: -1;
+    content: "";
     background: linear-gradient(
       135deg,
       var(--homepage-glow-strong),
       transparent 50%
     );
+    border-radius: inherit;
     opacity: 0;
     transition: opacity 0.3s ease;
-    z-index: -1;
   }
 
   .homepage-card-glow:hover::before {
@@ -162,9 +162,9 @@
 
   /* Demo preview container */
   .homepage-demo-container {
+    overflow: hidden;
     background: var(--homepage-card);
     border-radius: var(--radius);
-    overflow: hidden;
   }
 
   /* Active state indicator */
@@ -175,15 +175,15 @@
 
   /* Tech tag styling */
   .homepage-tech-tag {
+    color: var(--homepage-muted-foreground);
     background: var(--homepage-secondary);
     border: 1px solid var(--homepage-border);
-    color: var(--homepage-muted-foreground);
     transition: all 0.2s ease;
   }
 
   .homepage-tech-tag:hover {
-    border-color: var(--homepage-primary);
     color: var(--homepage-primary);
+    border-color: var(--homepage-primary);
   }
 
   /* Section divider */
@@ -234,22 +234,22 @@
     width: 10px !important;
     height: 10px !important;
   }
-  
+
   html:has(.homepage-wrapper)::-webkit-scrollbar-track,
   html:has(.homepage-wrapper) ::-webkit-scrollbar-track,
   .homepage-wrapper::-webkit-scrollbar-track {
     background: var(--homepage-scrollbar-track) !important;
   }
-  
+
   html:has(.homepage-wrapper)::-webkit-scrollbar-thumb,
   html:has(.homepage-wrapper) ::-webkit-scrollbar-thumb,
   .homepage-wrapper::-webkit-scrollbar-thumb {
     background: var(--homepage-scrollbar-thumb) !important;
-    border-radius: 10px !important;
-    border: 2px solid transparent !important;
     background-clip: content-box !important;
+    border: 2px solid transparent !important;
+    border-radius: 10px !important;
   }
-  
+
   html:has(.homepage-wrapper)::-webkit-scrollbar-thumb:hover,
   html:has(.homepage-wrapper) ::-webkit-scrollbar-thumb:hover,
   .homepage-wrapper::-webkit-scrollbar-thumb:hover {
@@ -260,7 +260,8 @@
   /* Firefox scrollbar support - use * selector to defeat global * */
   :root:has(.homepage-wrapper) *,
   :root:has(.homepage-wrapper) {
-    scrollbar-color: var(--homepage-scrollbar-thumb) var(--homepage-scrollbar-track) !important;
+    scrollbar-color: var(--homepage-scrollbar-thumb)
+      var(--homepage-scrollbar-track) !important;
     scrollbar-width: thin !important;
   }
 }
@@ -270,25 +271,25 @@
   /* Header navigation */
   .homepage-header {
     background: var(--homepage-background) / 0.8;
-    backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--homepage-border);
+    backdrop-filter: blur(12px);
   }
 
   /* Hero section */
   .homepage-hero {
     position: relative;
-    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: 100vh;
   }
 
   /* Feature card */
   .homepage-feature-card {
+    padding: 1.5rem;
     background: var(--homepage-card);
     border: 1px solid var(--homepage-border);
     border-radius: var(--radius);
-    padding: 1.5rem;
     transition: all 0.3s ease;
   }
 
@@ -300,10 +301,10 @@
   /* Demo section tabs */
   .homepage-demo-tab {
     padding: 0.75rem 1.5rem;
-    border-radius: var(--radius);
     font-weight: 500;
-    transition: all 0.2s ease;
     color: var(--homepage-muted-foreground);
+    border-radius: var(--radius);
+    transition: all 0.2s ease;
   }
 
   .homepage-demo-tab:hover {
@@ -311,8 +312,8 @@
   }
 
   .homepage-demo-tab[data-active="true"] {
-    background: var(--homepage-primary);
     color: var(--homepage-primary-foreground);
+    background: var(--homepage-primary);
   }
 
   /* CTA section */

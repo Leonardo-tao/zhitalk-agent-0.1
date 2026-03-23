@@ -62,7 +62,7 @@
     "editor.defaultFormatter": "biomejs.biome"
   },
   "explorer.fileNesting.enabled": true,
-	"explorer.fileNesting.expand": false,
+  "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
     "next.config.*": "*.env, .env.*, .eslintrc*, .prettierrc*, .babelrc*, drizzle.config.ts, playwright.config.ts, postcss.config.mjs, components.json, instrumentation.ts, next-env.d.ts, vercel-template.json",
     "*.ts": "${capture}.js, ${capture}.d.ts, ${capture}.map, ${capture}.test.ts, ${capture}.spec.ts",
@@ -79,6 +79,6 @@
   "files.exclude": {
     "**/.git": true,
     "**/.DS_Store": true,
-    "**/node_modules": true,
+    "**/node_modules": true
   }
 }

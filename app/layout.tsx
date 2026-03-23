@@ -9,7 +9,7 @@ import { SessionProvider } from "next-auth/react";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://zhiji.codercat.top"),
-  title: "ZhiJi 知己",
+  title: "ZhiJi 知己——AI 智能面试官，优化简历，模拟面试",
   description: "AI 智能面试官，优化简历，模拟面试",
 };
 

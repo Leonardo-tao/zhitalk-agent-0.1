@@ -20,7 +20,7 @@ export function ImageEditor({
     <div
       className={cn("flex w-full flex-row items-center justify-center", {
         "h-[calc(100dvh-60px)]": !isInline,
-        "h-[200px]": isInline,
+        "h-50": isInline,
       })}
     >
       {status === "streaming" ? (
@@ -34,10 +34,10 @@ export function ImageEditor({
         </div>
       ) : (
         <picture>
-          {/** biome-ignore lint/nursery/useImageSize: "Generated image without explicit size" */}
+          {/** biome-ignore lint/correctness/useImageSize: "Generated image without explicit size" */}
           <img
             alt={title}
-            className={cn("h-fit w-full max-w-[800px]", {
+            className={cn("h-fit w-full max-w-200", {
               "p-0 md:p-20": !isInline,
             })}
             src={`data:image/png;base64,${content}`}
